@@ -10,5 +10,14 @@ This repository contains the code for my Entity Framework Core tutorial.
 
 ## Getting Started
 
-To get started, clone this repository and run the following command:
+To get started, clone this repository:
+
+- In VS proceed to Common Project and configure DBConnection string.
+- Build solution.
+- Open Package Manager Console in project directory and make sure Data Project selected as default.
+- Next, type add-migration exampleName and wait to build.
+- Then, type update-database.
+- Clean solution and rebuild it.
+
+### Ready to use.
 
