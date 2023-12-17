@@ -1,4 +1,5 @@
-﻿using EFCoreTutorial.Data.Models;
+﻿using EfCoreTutorial.Common;
+using EFCoreTutorial.Data.Models;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -28,7 +29,7 @@ namespace EFCoreTutorial.Data.Context
 			if (!optionsBuilder.IsConfigured)
 			{
 				// Configs ...
-				optionsBuilder.UseSqlServer("Data Source=(localdb)\\CoreDemo;Initial Catalog=EFCoreTutorial;Integrated Security=True;Connect Timeout=30;Encrypt=False;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False");
+				optionsBuilder.UseSqlServer(StringConstants.DbConnectionString);
 			}
 		}
 

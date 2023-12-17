@@ -1,5 +1,9 @@
+using EfCoreTutorial.Common;
 using EFCoreTutorial.Data.Context;
 using Microsoft.EntityFrameworkCore;
+using Serilog;
+
+Log.Logger = new LoggerConfiguration().WriteTo.Debug(Serilog.Events.LogEventLevel.Information).CreateLogger();
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -13,7 +17,7 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddLogging();
 builder.Services.AddDbContext<ApplicationDbContext>(conf =>
 {
-	conf.UseSqlServer("");
+	conf.UseSqlServer(StringConstants.DbConnectionString);
 	conf.EnableSensitiveDataLogging();
 });
 
