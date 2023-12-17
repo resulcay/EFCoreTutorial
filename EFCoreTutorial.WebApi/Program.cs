@@ -17,6 +17,7 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddLogging();
 builder.Services.AddDbContext<ApplicationDbContext>(conf =>
 {
+	conf.UseLazyLoadingProxies();
 	conf.UseSqlServer(StringConstants.DbConnectionString);
 	conf.EnableSensitiveDataLogging();
 });
